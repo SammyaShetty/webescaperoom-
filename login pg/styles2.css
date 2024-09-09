@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+   
+        background-image: url("./img/stry2bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+       
+    
+}
+h1 {
+    color: #ffffff; /* Change the color of the h1 element */
+}
+
+p {
+    color: #ffffff; /* Change the color of the p element */
+}
+h2 {
+    color: #ffffff; /* Change the color of the h1 element */
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+
+.levels {
+    margin-top: 40px;
+}
+
+.levels ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  justify-content: center;
+}
+
+.levels li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.levels li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #5788d8;
+    color: #fffafa;
+    border-radius: 5px;
+}
+
+.levels li a:hover {
+    background-color: #3285d8;
+}
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    transition: color 0.3s ease;
+  }
+
+  .back-button:hover {
+    color: #ffffff;
+  }

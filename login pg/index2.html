@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Game</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Escape Room Game!</h1>
+        <p>Can you solve all the puzzles and escape?</p>
+        <h2>Story 2</h2>
+        <div class="levels">
+            <h2>Choose a Level:</h2>
+            <ul>
+                <li><a id="level1" href="slevel1.html">Level 1</a></li>
+                <li><a id="level2" href="slevel2.html">Level 2</a></li>
+                <li><a id="level3" href="slevel3.html">Level 3</a></li>
+                <li><a id="level4" href="slevel4.html">Level 4</a></li>
+                <li><a id="level5" href="slevel5.html">Level 5</a></li>
+            </ul>
+        </div>
+    </div>
+    <button class="back-button" onclick="goBack()">&#8592; Back</button>
+
+    <script>
+        // Check the user's progress from localStorage
+        function checkProgress() {
+            let maxLevelUnlocked = localStorage.getItem('maxLevelUnlocked') || 1;
+
+            for (let i = 1; i <= 5; i++) {
+                let levelLink = document.getElementById('level' + i);
+                if (i > maxLevelUnlocked) {
+                    levelLink.classList.add('locked');
+                    levelLink.onclick = function(event) {
+                        event.preventDefault();
+                        alert('You need to complete the previous levels first!');
+                    };
+                } else {
+                    levelLink.classList.remove('locked');
+                    levelLink.onclick = null;
+                }
+            }
+        }
+
+        function goBack() {
+            window.location.href = "home.php";
+        }
+
+        // Check progress when the page loads
+        document.addEventListener('DOMContentLoaded', checkProgress);
+    </script>
+
+    <style>
+        .locked {
+            pointer-events: none;
+            color: grey;
+        }
+    </style>
+</body>
+</html>

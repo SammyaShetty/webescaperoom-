@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color:white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#board {
+    width: 322px; /* Adjusted width to fit 4 columns */
+    height: 322px; /* Adjusted height to fit 4 rows */
+    border: 2px solid purple;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows */
+    margin: 20px auto; /* Center the puzzle board */
+}
+
+#board img {
+    width: 79px;
+    height: 79px;
+    border: 0.5px solid lightblue;               
+    pointer-events: auto;
+}
+
+#pieces {
+    width: 648px; /* Adjusted width to fit 8 rows */
+    height: 162px; /* Adjusted height to fit 2 colums */
+    border: 2px solid purple;
+    margin: 0 auto; /* Center the pieces container */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 8 rows */
+    justify-items: center;
+    align-items: center;
+}
+
+#pieces img {
+    width: 79px;
+    height: 79px;
+    border: 0.5px solid lightblue;
+}
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message {
+    font-size: 18px;
+    color: green;
+}
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message {
+    font-size: 18px;
+    color: green;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Puzzle</title>
+    <link rel="stylesheet" href="spuzzle5.css">
+    <script src="spuzzle5.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .scoreboard-content {
+            background-color: rgb(3, 255, 66);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .star {
+            font-size: 40px;
+            color: gold;
+            margin: 0 5px;
+        }
+        .star.blurred {
+            filter: blur(2px);
+            color: gray;
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="board" class="board"></div>
+        <h2>Turns: <span id="turns">0</span></h2>
+        <div id="pieces" class="pieces"></div>
+        <p id="message"></p>
+        <button id="exitbtn" style="display: none;" onclick="completeLevel5()">EXIT</button>
+        <button id="quitBtn" onclick="quitGame()">Quit</button>
+    </div>
+    <audio id="placeSound" src="./img/audio.mp3"></audio>
+    <div id="scoreboard-container" class="hidden scoreboard"></div>
+    <script>
+        function showScoreboard() {
+            document.getElementById('scoreboard-container').innerHTML = `
+                <div class="scoreboard-content">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star blurred">★</span>
+                        <span class="star blurred">★</span>
+                    </div>
+                    <div class="message">
+                        Congratulations, you escaped!
+                    </div>
+                </div>`;
+            document.getElementById('scoreboard-container').classList.remove('hidden');
+        }
+
+        function completeLevel5() {
+            document.querySelector('.container').classList.add('hidden');
+            showScoreboard();
+        }
+
+        function nextLevel() {
+            completeLevel5();
+        }
+    </script>
+</body>
+</html>
